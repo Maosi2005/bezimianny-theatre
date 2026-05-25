@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8b0000" />
+    <meta name="description" content="Театр «Безымянный»" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Театр «Безымянный»</title>
+    
+    <!-- Автоматически подключаем JS и CSS из папки static -->
+    <script>
+        // Находим JS и CSS файлы в папке static
+        fetch('static/js/')
+            .then(() => {})
+            .catch(() => {});
+        
+        // Простой способ: подключаем все возможные варианты
+        window.addEventListener('DOMContentLoaded', function() {
+            // JS файлы
+            const jsFiles = [
+                'static/js/main.js',
+                'static/js/main.09854165.js'
+            ];
+            jsFiles.forEach(function(file) {
+                const script = document.createElement('script');
+                script.src = file;
+                script.defer = true;
+                document.head.appendChild(script);
+            });
+            
+            // CSS файлы
+            const cssFiles = [
+                'static/css/main.css',
+                'static/css/main.09426ef5.css'
+            ];
+            cssFiles.forEach(function(file) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = file;
+                document.head.appendChild(link);
+            });
+        });
+    </script>
+</head>
+<body>
+    <noscript>Вам нужно включить JavaScript, чтобы запустить это приложение.</noscript>
+    <div id="root"></div>
+</body>
+</html>
